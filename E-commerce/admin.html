@@ -4,39 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce1</title>
+    <a href="./products.html"><button>Show Product</button></a>
+    <title>Admin Panel</title>
 </head>
 <body>
-    <h1>Admin Panel</h1>
-    <label>Product Name</label><br>
-    <input type="text" id="name" placeholder="Product name"><br>
+    <form action="" id="form">
+        <h1>Admin Panel</h1>
 
-    <label>Category</label><br>
-    <input type="text" name="Category" id="category" placeholder="Category"><br>
+        <label for="">Product Name</label><br>
+        <input type="text" name="" id="name" placeholder="Product name here"><br>
 
-    <label>Image Url</label><br>
-    <input type="url" name="Image_Url" id="image" placeholder="Enter Url"><br>
+        <label for="">Category</label><br>
+        <input type="text" id="category" placeholder="Category here"><br>
 
-    <label for="">Price</label><br>
-    <input type="number" name="Price" id="price" placeholder="Price here"><br>
+        <label for="">Image-Url</label><br>
+        <input type="url" name="" id="image" placeholder="Enter url here"><br>
 
-    <label for="">Gender</label><br>
-    <select name="Gender" id="gender">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
-    </select>
+        <label for="">Price</label><br>
+        <input type="number"  id="price" placeholder="Price here"><br>
 
-    <label for="">Sold</label>
-    <select name="False" id="sold">
-    <option value="False">False</option>
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
 
-    </select><br>
+        <label for="">Sold</label><br>
+        <select name="" id="sold">
+            <option value="False">False</option>
+            <option value="True">True</option>
+       </select><br>
+
+        <input type="submit" name="" id="add">
 
 
-    <button id="add" onclick="addProd()">Add Product</button>
-    
-
+    </form>
 </body>
 </html>
 
