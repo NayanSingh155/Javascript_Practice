@@ -197,12 +197,27 @@ var sis3={
     name:"lol"
 }
 
-function myName(a){
-    console.log(this.name,a)
+function myName(a,c){
+   console.log(this.name,a,c)
+
 }
-myName.call(sis2,21);
-myName.call(sis1,18);
-myName.call(sis3,100);
+// myName.call(sis2,21,"patna");
+// myName.call(sis3,100,"Patal");
+
+
+// ---------or--------
+function sisName(a,c){
+    this.age=a,
+    this.city=c
+}
+sisName.call(sis1,18,"Banka");
+// console.log(sis1);
+
+sisName.call(sis2,21,"patna")
+// console.log(sis2);
+
+sisName.call(sis3,18,"bup")
+// console.log(sis3);
 
 
 var bro_1={
@@ -217,8 +232,130 @@ var bro_3={
     name:"Adi"
 }
 
-function broName(){
-    console.log(this)
+function broName(a,j){
+    this.age=a,
+    this.job=j
+}
+// ---call kar rahe h
+  broName.call(bro_1,21,"Engineer")
+//   console.log(bro_1);
+
+  broName.call(bro_2,23,"Polytechnic")
+//   console.log(bro_2);
+
+broName.call(bro_3,22,"school")
+// console.log(bro_3);
+
+
+var mom={
+    name:"Anshu devi"
 }
 
-broName.call(bro_1)
+var mom1={
+    name:"Premlata devi"
+}
+
+function momName(work){
+    console.log(this.name,work)
+}
+
+// momName.call(mom1,"seva");
+// momName.call(mom,"dowork");
+
+// --or--
+
+function momName(a,w){
+    this.age=a,
+    this.work=w
+}
+
+momName.call(mom,42,"housewife")
+// console.log(mom);
+
+momName.call(mom1,24,"housewife");
+// console.log(mom1);
+
+
+
+var b1={
+    name:"Vikash kumar"
+}
+
+var b2={
+    name:"vikram kumar"
+}
+
+var b3={
+    name:"Tejash singh"
+}
+
+function details(a,c,w){
+    this.age=a,
+    this.city=c,
+    this.work=w
+}
+
+details.call(b1,21,"Engineer","Delhi")
+// console.log(b1);
+
+details.call(b2,19,"polytechnic","patna")
+// console.log(b2);
+
+details.call(b3,1,"Khagaria","sarart")
+// console.log(b3);
+
+
+// <----------apply-------->
+
+// details.apply(b3,[2,"Khagaria","sarart"])
+
+// details.apply(b1,[21,"Engineer","Delhi"])
+
+// details.apply(b2,[19,"polytechnic","patna"])
+
+
+// <----------bind---------->
+
+var a={
+    name:"nayan"
+}
+
+function Name(){
+    console.log(this.name);
+}
+var result=Name.bind(a);
+// result();
+
+
+// --------lecture------
+
+
+function car(n,m,b,y){
+    this.name=n,
+    this.model=m,
+    this.bodystyle=b,
+    this.year=y
+}
+
+var i10=new car("Honda","Accord","Sedan",1999);
+// console.log(i10);
+
+
+var kia=new car("Kia","Seltos","SUV",2022)
+// console.log(kia);
+
+// <--this points to global Object in a function invocation--->
+
+function myFun(){
+    this;
+}
+myFun();
+
+var myObject={
+   myObject:function(){
+    this;
+   }
+
+}
+myFun();
+

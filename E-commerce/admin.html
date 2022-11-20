@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce1</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <label>Product Name</label><br>
+    <input type="text" id="name" placeholder="Product name"><br>
+
+    <label>Category</label><br>
+    <input type="text" name="Category" id="category" placeholder="Category"><br>
+
+    <label>Image Url</label><br>
+    <input type="url" name="Image_Url" id="image" placeholder="Enter Url"><br>
+
+    <label for="">Price</label><br>
+    <input type="number" name="Price" id="price" placeholder="Price here"><br>
+
+    <label for="">Gender</label><br>
+    <select name="Gender" id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="">Sold</label>
+    <select name="False" id="sold">
+    <option value="False">False</option>
+
+    </select><br>
+
+
+    <button id="add" onclick="addProd()">Add Product</button>
+    
+
+</body>
+</html>
+
+<script src="./admin.js"></script>
