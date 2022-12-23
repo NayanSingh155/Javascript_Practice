@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,35 @@
     <link rel="stylesheet" href="./styles/men.css">
     <link rel="stylesheet" href="./styles/index.css">
 </head>
+
 <body>
     <div>
-          mens page
+        <nav>
+            <div class="navbar">
+                <div onclick="Reebook()"><a href="./index.html">Reebook</a></div>
+
+            </div>
+            <ul class="nav-links">
+                <li><a href="./men.html">Men</a></li>
+                <li><a href="./women.html">Women</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./signup.html">SignUp</a></li>
+                <li><a href="./cart.html">Cart</a></li>
+
+            </ul>
+        </nav>
+
+        <select onchange="sortItem()" id="">
+            <option value="S">sort by</option>
+            <option value="HL">High To Low</option>
+            <option value="LH">Low To High</option>
+        </select>
+        <div id="men">
+            <!-- <-----------append-------->
+        </div>
     </div>
+
 </body>
+
 </html>
 <script src="./scripts/men.js"></script>
