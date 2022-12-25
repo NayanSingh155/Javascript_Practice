@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: gray;
+}
+div{
+    background-color: white;
+    width: 65%;
+    margin: auto;
+    padding: 10%;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+    line-height: 25px;
+    text-align: center;
+    padding-bottom: 5%;
+}
+input,button{
+    width: 100%;
+    font-size: 25px;
+    display: block;
+    margin-top: 5px;
+}

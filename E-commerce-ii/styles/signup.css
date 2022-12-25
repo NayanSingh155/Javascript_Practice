@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: gray;
+}
+div{
+    margin: auto;
+    justify-content: center;
+    width: 65%;
+    background-color: #fff;
+    margin-top: 3%;
+    padding: 5%;
+    align-items: center;
+    text-align: center;
+    
+}
+input,button{
+    width: 40%;
+    font-size: medium;
+    margin-top: 5px;
+}
