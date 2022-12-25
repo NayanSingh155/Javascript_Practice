@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    padding: 15px;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(8, 7, 7);
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+.reebook {
+    font-weight: bolder;
+    font-size: 20px;
+    color: bisque;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 60%;
+    font-size: 18px;
+}
+
+/* ------append CSS----- */
+body{
+    background: black;
+}
+select{
+    color: #000;
+    background:gray;
+}
+#product{
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(4,1fr);
+}
+img{
+    width: 80%;
+  
+}
+button{
+    background:gray;
+    padding: 5px;
+    font-weight: bold;
+}

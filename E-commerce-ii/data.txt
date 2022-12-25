@@ -1,3 +1,12 @@
+img1=https://images-static.nykaa.com/uploads/tr:w-190,e-sharpen,/bf8b0ef1-0520-41e1-9a0b-dee1017d37e9.jpg
+
+img2=https://images-static.nykaa.com/uploads/tr:w-190,e-sharpen,/ce5b4dff-6352-471f-adb4-981e7f6519cd.jpg
+
+img3=https://images-static.nykaa.com/uploads/tr:w-190,e-sharpen,/68872754-3a70-4afc-a6cf-09bf2749d3f5.jpg
+
+img4=https://images-static.nykaa.com/uploads/tr:w-190,e-sharpen,/870b9cd2-47e8-4797-a84a-57e38e42370f.jpg
+
+
 productData=[
     {
     brand: "Puma",
@@ -225,40 +234,5 @@ productData=[
     img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/2/3/238451501_1_43bf9c90.jpg?rnd=20200526195200",
   },
 ]
-// ------appending part------
 
-function displayProducts(data){
-    let products= document.getElementById("product");
-       products.innerHTML="";
-   data.forEach (function(elem){
-      let div=document.createElement("div");
-      let img=document.createElement("img");
-      img.src=elem.img;
-      let name=document.createElement("h3")
-      name.innerText=elem.name;
-      let category=document.createElement("h3");
-      category.innerText=elem.catagory;
 
-      let button=document.createElement("button");
-      button.innerText="AddToCart";
-
-      div.append(img,name,category,button);
-      products.append(div);
-   })
-}
-displayProducts(productData);
-
-// --------filter-----
-
-let filter=document.getElementById("filter");
-filter.addEventListener("change",function(){
-    if(filter.value==="All"){
-        displayProducts(productData)
-    }else{
-        let filtered=productData.filter(function(el){
-            return el.catagory===filter.value;
-        })
-        displayProducts(filtered);
-    }
-})
-// -------------sorting------------
