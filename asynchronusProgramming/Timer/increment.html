@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <h2 id="timer"></h2>
+    <!-- <button onclick="counterInc()">Start</button>
+    <button onclick="counterDec()">Stop</button> -->
+</body>
+</html>
+<script>
+    let h2=document.getElementById("timer");
+    let count=0;
+    function counter(){
+        count=count+1;
+        h2.innerText="count : "+count;
+
+    }
+    setInterval(counter,1000)
+    // setTimeout(counter,1000)
+</script>
