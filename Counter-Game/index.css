@@ -1,0 +1,30 @@
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            background-color: gray;
+        }
+        div{
+            background-color: white;
+            width:50%;
+            height:300px;
+            align-items: center;
+            margin: auto;
+            text-align: center;
+            margin-top: 5%;
+            padding: 2%;
+        }
+        input{
+            width: 70%;
+            height: 40px;
+            background-color: antiquewhite;
+            margin-top: 5%;
+            padding: 5%;
+        }
+
+
+    
