@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slideshow</title>
     <style>
-        
+
     </style>
 </head>
+
 <body>
-    <h2>Slideshow</h2>
-    <input type="url" id="url" placeholder="Enter Image url">
-    <button onclick="StoreImage()">Submit Image</button>
+    <h2>slideshow</h2>
+    <input type="url" id="url" placeholder="enter url">
+    <button onclick="storeImage()">Submit Image</button>
+     <div id="container">Slideshow</div>
+     <button onclick="start">Start</button>
+     <button onclick="pause">Pause</button>
 </body>
+
 </html>
 <script>
-
+    function storeImage(){
+        let url=document.getElementById("url").value;
+        let images=JSON.parse(localStorage.getItem("images"));
+        images.push(url)
+        localStorage.setItem("images",JSON.stringify(images))
+    }
+    let counter=0;
+    let id;
+    function start(){
+         let container=document.getElementById("container")
+         container.innerHTML=null;
+         let img=document.createElement("img")
+         id=setInterval(function(){
+            if(counter===images.length){
+                counter=0;
+            }
+            img.src=images[counter];
+            container.append(img);
+            console.log(counter);
+            counter++;
+         },3000)
+    }
+    function pause(){
+        console.log("paused",counter)
+        clearInterval(id);
+    }
+    
 </script>
