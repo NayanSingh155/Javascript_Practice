@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,23 @@
     <title>FTECH</title>
     <link rel="stylesheet" href="./index.css">
 </head>
-<body>
-    <select id="sort">
-        <option value="All">All</option>
-        <option value="LH">Low to High</option>
-        <option value="HL">High to Low</option>
-    </select>
 
+<body>
+    <!-- -----sort------ -->
+
+    <button onclick="sortLH()">Sort Low to High</button>
+    <button onclick="sortHL()">Sort High to Low</button>
+
+    <!-- ------filter------- -->
+
+    <label>Filter</label>
+    <input oninput="filter()" type="text" id="query" placeholder="filter products">
+
+    <!-- ------------append---------- -->
     <div id="box"></div>
+
+    
 </body>
+
 </html>
 <script src="./index.js"></script>

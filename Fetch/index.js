@@ -26,27 +26,55 @@ async function getData() {
 getData();
 
 // ----------append-----------
-function appendData(arrData){
-   arrData.forEach(el => {
-     let div=document.createElement("div");
-     let img=document.createElement("img");
-     img.src=el.image;
+let box = document.getElementById("box");
+function appendData(arrData) {
+    box.innerHTML = null;
+    arrData.forEach(el => {
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        img.src = el.image;
 
-     let description=document.createElement("p");
-     description.innerText=el.description;
+        let title = document.createElement("h3")
+        title.innerText = el.title;
 
-     let title=document.createElement("h3")
-     title.innerText=el.title;
+        let price = document.createElement("h3")
+        price.innerText = el.price;
 
-     let price=document.createElement("h3")
-     price.innerText=el.price;
+        let category = document.createElement("h4")
+        category.innerText = el.category;
 
-     let category=document.createElement("h4")
-     category.innerText=el.category;
+        div.append(img, title, price, category);
+        box.append(div);
 
-     div.append(img,title,price,category);
-     let box=document.getElementById("box")
-     box.append(div);
+    });
 
-   });
+}
+// --------------sort--------------
+function sortLH() {
+    data = data.sort(function
+        (a, b) {
+       return a.price - b.price;
+        // console.log(data)
+    })
+    appendData(data);
+}
+
+function sortHL() {
+    data = data.sort(function
+        (a, b) {
+       return b.price - a.price;
+        // console.log(data)
+
+    })
+    appendData(data);
+}
+// -----------filter---------
+function filter(){
+    let query=document.getElementById("query").value;
+    let copy_data=data;
+
+    copy_data=copy_data.filter(function(el){
+        return el.title.toLowerCase().includes(query);
+    })
+    appendData(copy_data)
 }
