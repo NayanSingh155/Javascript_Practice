@@ -41,9 +41,9 @@ let appendVideos=(data)=>{
         //     videoId:videoId,
         // }
 
-        div.onclick=()=>{
-            localStorage.setItem('clicked_video',JSON.stringify(data));
-        }
-        console.log(title,videoId);
+        // div.onclick=()=>{
+        //     localStorage.setItem('clicked_video',JSON.stringify(data));
+        // }
+        // console.log(title,videoId);
     });
 }
