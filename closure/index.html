@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+    <style>
+        input{
+            width: 200px;
+        }
+        #movies{
+            border: 1px solid black;
+            height: 200px;
+            width: 205px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <input  oninput="debounce(
+        main,1000)" type="text" placeholder="search movie" id="query">
+    <div id="movies"></div>
+</body>
+</html>
+<script src="./index.js"></script>
