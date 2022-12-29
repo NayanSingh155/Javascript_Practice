@@ -27,9 +27,19 @@ let movies = document.getElementById('movies');
 function appendData(data){
     movies.innerHTML=null;
     data.forEach(function(el){
-        let p=document.createElement('p')
+        let div=document.createElement('div')
+        let img=document.createElement('img')
+        img.src=el.Poster;
+
+        let year=document.createElement
+        ('p')
+        year.innerText=el.Year;
+
+    
+        let p =document.createElement('p')
         p.innerText=el.Title;
-        movies.append(p);
+        div.append(img,p,year)
+        movies.append(div);
     });
 }
 let id;
