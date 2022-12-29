@@ -1,0 +1,39 @@
+
+    #navbarWrap {
+        display: flex;
+        border: 2px solid red;
+        width: 100%;
+        height: 50px;
+        justify-content: space-between;
+
+    }
+
+    img {
+        width: 65%;
+        height: 50px;
+        margin-left: 12px;
+
+    }
+
+    #btnImg {
+        width: 25px;
+        height: 25px;
+    }
+
+    #input3 {
+        margin-left: 115px;
+        display: flex;
+        /* padding: 10px; */
+    }
+
+    #mic4 {
+        width: 40px;
+    }
+
+    #showResult {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 10px;
+        /* border: 2px solid red; */
+        grid-gap: 15px;
+    }
