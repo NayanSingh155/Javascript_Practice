@@ -18,53 +18,58 @@
 // }
 
 
-function changeName(){
-  let x=  document.getElementById("h")
-   x.innerText="Nayan Singh"
-   x.style.color="red"
-   x.style.textAlign="center"
+function changeName() {
+    let x = document.getElementById("h")
+    x.innerText = "Nayan Singh"
+    x.style.color = "red"
+    x.style.textAlign = "center"
 }
 
-function subFun(){
-    let a=document.getElementById("name").value;
-    let b=document.getElementById("email").value;
-    
-    document.getElementById("n").innerText=a;
-    document.getElementById("e").innerText=b;
+function subFun() {
+    let a = document.getElementById("name").value;
+    let b = document.getElementById("email").value;
+
+    document.getElementById("n").innerText = a;
+    document.getElementById("e").innerText = b;
 
 }
 
-let count=0;
-function countFun(){
+let count = 0;
+function countFun() {
     console.log("signUp")
     count++;
-   console.log(count)
+    console.log(count)
 }
 
 // let count=0;
-function countSign(){
- console.log("signIn")
- count++;
- console.log(count)
+function countSign() {
+    console.log("signIn")
+    count++;
+    console.log(count)
 }
 
-function callingMe(){
+function callingMe() {
     alert("ring Bell")
 }
 
-function added(){
+function added() {
     alert("added to cart")
 }
 
-function getId(){
-    let p=document.getElementById("para").innerText;
-     console.log(p);
+function getId() {
+    let p = document.getElementById("para").innerText;
+    console.log(p);
 
-     let box=document.getElementById("box").innerText;
-     console.log(box)
-    
-     let head=document.getElementById("head").innerText;
-     console.log(head)
+    let box = document.getElementById("box").innerText;
+    console.log(box);
+
+    let head = document.getElementById("head").innerText;
+    console.log(head);
 }
+let l=document.getElementById("legato").innerHTML;
+console.log(l)
+
+let t= document.getElementById("legato").innerText;
+console.log(t)
 
 
