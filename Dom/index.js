@@ -1,21 +1,21 @@
-// function likeMe(){
-//     alert("someone liked me")
-// }
-// function dislikeMe(){
-//     // alert("someone disliked me!!")
-//     console.log("disliked")
-// }
+function likeMe(){
+    alert("someone liked me")
+}
+function dislikeMe(){
+    // alert("someone disliked me!!")
+    console.log("disliked")
+}
 
-// function changeFun(){
-//     let x= document.getElementById("head")
-// x.innerText="Now I am Changed I am new Head"
+function changeFun(){
+    let x= document.getElementById("head")
+x.innerText="Now I am Changed I am new Head"
 
-// let y= document.getElementById("para")
-// y.innerText="Now I am N ew Para"
+let y= document.getElementById("para")
+y.innerText="Now I am N ew Para"
 
-// let z= document.getElementById("div")
-// z.innerText="new div"
-// }
+let z= document.getElementById("div")
+z.innerText="new div"
+}
 
 
 function changeName() {
@@ -73,3 +73,17 @@ let t= document.getElementById("legato").innerText;
 console.log(t)
 
 
+function signup(){
+    let input=document.getElementById("email").value;
+    let email=document.getElementById("name").value;
+    let mobile=document.getElementById("mobile").value;
+
+    let dn=document.getElementById("dn").innerText=input;
+    console.log(dn)
+
+    let em=document.getElementById("em").innerText=email;
+    console.log(em)
+
+    let mb=document.getElementById("mb").innerText=mobile;
+    console.log(mb)
+}
