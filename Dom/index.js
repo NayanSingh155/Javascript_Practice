@@ -34,4 +34,18 @@ function subFun(){
 
 }
 
+let count=0;
+function countFun(){
+    console.log("signUp")
+    count++;
+   console.log(count)
+}
+
+// let count=0;
+function countSign(){
+ console.log("signIn")
+ count++;
+ console.log(count)
+}
+
 
