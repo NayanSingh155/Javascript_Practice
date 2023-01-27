@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom3</title>
+</head>
+<body>
+    <h1>Content Manipulation</h1>
+    <h1 id="firstName">Hello</h1>
+    <div id="LastName">Nayan</div>
+    <p id="reset">Singh</p>
+
+    <button onclick="setFirstName()">FirstName</button>
+    <button onclick="setLastName()">LastName</button>
+    <button onclick="reset()">Reset</button>
+
+</body>
+</html>
+<script>
+    function setFirstName(){
+        document.getElementById("firstName").innerText="Nayan";
+    }
+
+    function setLastName(){
+      document.getElementById("LastName").innerText="Singh";
+    }
+
+    function reset(){
+        document.getElementById("firstName").innerText="";
+        document.getElementById("LastName").innerText="";
+        
+    }
+</script>
