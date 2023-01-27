@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter name here"/>
+    <input type="mail" id="email" placeholder="Enter email here"/>
+    <input type="number" id="mobile" placeholder="Enter Mobile here"/>
+    <select id="Gender">
+        <option value="">--</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+
+    </select>
+
+    <button onclick="submitFun()">Submit</button>
+
+</body>
+</html>
+<script>
+      function submitFun(){
+        let name=document.getElementById("name").value;
+        alert(name);
+
+        let email=document.getElementById("email").value;
+        alert(email)
+
+        let mobile=document.getElementById("mobile").value;
+        alert(mobile)
+
+        let gen=document.getElementById("Gender").value;
+        alert(gen)
+      }
+</script>
