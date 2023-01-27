@@ -56,4 +56,15 @@ function added(){
     alert("added to cart")
 }
 
+function getId(){
+    let p=document.getElementById("para").innerText;
+     console.log(p);
+
+     let box=document.getElementById("box").innerText;
+     console.log(box)
+    
+     let head=document.getElementById("head").innerText;
+     console.log(head)
+}
+
 
