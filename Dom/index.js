@@ -48,4 +48,12 @@ function countSign(){
  console.log(count)
 }
 
+function callingMe(){
+    alert("ring Bell")
+}
+
+function added(){
+    alert("added to cart")
+}
+
 
