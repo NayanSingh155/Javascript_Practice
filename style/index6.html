@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>First H1</h1>
+    <h1>Second H1</h1>
+
+    <h3>First H3</h3>
+    <h3>second H3</h3>
+
+    <h5>First H5</h5>
+    <h5>Second H5</h5>
+    <h5>Third H5</h5>
+
+    <div class="green">First Div</div>
+    <div class="red">Second Div</div>
+    <div class="blue">Third Div</div>
+
+    <p class="green">First</p>
+    <p class="red">Second</p>
+    <p class="blue">Third</p>
+
+    <button id="btn1">ChangeH1</button>//red
+    <button id="btn2">ChangeH3</button>//green
+    <button id="btn3">ChangeH5</button>//blue
+    <button id="btn4">Change Green</button>//class green-green,red=red,blue-blue
+    <button id="btn5">Change Red</button>
+    <button id="btn6">Change Blue</button>
+</body>
+
+</html>
+<script>
+    document.querySelector("#btn1").addEventListener("click",changeRed)
+    function changeRed(){
+        document.querySelector("h1").style.backgroundColor="red"
+    }
+</script>
