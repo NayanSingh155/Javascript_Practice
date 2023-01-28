@@ -30,12 +30,20 @@ let arr=[
     {name:"Light",color:"white",bgColor:"green"},
     {name:"Link",color:"blue",bgColor:"mint"}
 ]
-for(let i=0;i<arr.length;i++){
+// for(let i=0;i<arr.length;i++){
+//     let btn=document.createElement("button")
+//     btn.innerText=arr[i].name;
+//     btn.style.backgroundColor=arr[i].bgColor;
+//     btn.style.color=arr[i].color;
+//     document.querySelector("body").append(btn);
+// }
+
+arr.forEach(function(elem,i,arr){
     let btn=document.createElement("button")
-    btn.innerText=arr[i].name;
-    btn.style.backgroundColor=arr[i].bgColor;
-    btn.style.color=arr[i].color;
-    document.querySelector("body").append(btn);
-}
+    btn.innerText=elem.name;
+    btn.style.backgroundColor=elem.bgColor;
+    btn.style.color=elem.color;
+    document.querySelector("body").append(btn)
+})
 
 </script>
