@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: serif;
+    }
+
+    #container {
+        border: 2px solid red;
+        width: 25%;
+        height: 440px;
+        margin: auto;
+        margin-top: 80px;
+    }
+
+    #display {
+        border: 2px solid red;
+        height: 50px;
+        margin: 34px;
+        
+    }
+
+    #key {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    #key div {
+        border: 2px solid red;
+        width: 40px;
+        height: 40px;
+        font-weight:900;
+        margin: 1rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div id="container">
+
+        <div id="display"></div>
+        <div id="key">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>+</div>
+
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>-</div>
+
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>*</div>
+
+            <div>C</div>
+            <div>0</div>
+            <div>=</div>
+            <div>/</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let key=document.querySelectorAll("#key>div")
+    let bag="";
+    for(let i=0;i<key.length;i++){
+        key[i].addEventListener("click",calFun);
+    }
+    
+    function calFun(event){
+       let targetNum=event.target.innerText;
+       if(targetNum=="C"){
+        bag="";
+        document.querySelector("#display").innerText="";
+       }else if(targetNum=="="){
+        document.querySelector("#display").innerText=eval(bag);
+       }else{
+        bag+=targetNum;
+        document.querySelector("#display").innerText=bag;
+       }
+    }
+</script>
