@@ -50,4 +50,36 @@
            h3[i].style.backgroundColor="green"
         }
     }
+
+    document.querySelector("#btn3").addEventListener("click",blueFun);
+    function blueFun(){
+        let blue=document.querySelectorAll("h5")
+        for(let i=0;i<blue.length;i++){
+            blue[i].style.backgroundColor="blue"
+        }
+    }
+    document.querySelector("#btn4").addEventListener("click",classGreen)
+    function classGreen(){
+        let green=document.querySelectorAll(".green");
+        for(let i=0;i<green.length;i++){
+            green[i].style.backgroundColor="green"
+        }
+    }
+
+    document.querySelector("#btn5").addEventListener("click",classRed);
+    function classRed(){
+        let clRed=document.querySelectorAll(".red");
+        for(let i=0;i<clRed.length;i++){
+            clRed[i].style.backgroundColor="red"
+        }
+    }
+
+    document.querySelector("#btn6").addEventListener("click",classBlue)
+    function classBlue(){
+        let clsBlue=document.querySelectorAll(".blue");
+        for(let i=0;i<clsBlue.length;i++){
+
+            clsBlue[i].style.backgroundColor="blue";
+        }
+    }
 </script>
