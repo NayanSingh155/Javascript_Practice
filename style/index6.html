@@ -41,4 +41,13 @@
     function changeRed(){
         document.querySelector("h1").style.backgroundColor="red"
     }
+
+    document.querySelector("#btn2").addEventListener("click",greenH3)
+    function greenH3(){
+        let h3=document.querySelectorAll("h3")
+        for(let i=0;i<h3.length;i++){
+
+           h3[i].style.backgroundColor="green"
+        }
+    }
 </script>
