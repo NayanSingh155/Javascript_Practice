@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nayan Singh</h1>
+    <button>Click</button>
+</body>
+</html>
+
+<script>
+    let text=document.querySelector("h1")
+    text.addEventListener("click", eventFun);
+
+    let btn=document.querySelector("button")
+    btn.addEventListener("click",loadFun);
+
+    function loadFun(event){
+        console.log(event)
+        console.log(event.target)
+        console.log(event.target.innerText)
+    }
+    function eventFun(event){
+        console.log(event)
+        console.log(event.target)
+        console.log(event.target.innerText)
+    }
+</script>
