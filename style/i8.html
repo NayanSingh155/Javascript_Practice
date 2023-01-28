@@ -11,14 +11,31 @@
 </body>
 </html>
 <script>
-    let names=["primary","secondary","success","Danger","Warning","Info","Light","Dark","Link"];
+//     let names=["primary","secondary","success","Danger","Warning","Info","Light","Dark","Link"];
 
-    let Colors=["blue","grey","green","red","yellow","cyan","white","black","white"];
+//     let Colors=["blue","grey","green","red","yellow","cyan","white","black","white"];
+// //1st way
+//     for(let i=0;i<names.length;i++){
+//         let btn=document.createElement("button")
+//         btn.innerText=names[i];
+//         btn.style.backgroundColor=Colors[i];
+//         document.querySelector("body").append(btn)
+//     }
+let arr=[
+    {name:"Primary",color:"white",bgColor:"blue"},
+    {name:"Secondary",color:"white",bgColor:"gray"},
+    {name:"Danger",color:"white",bgColor:"yellow"},
+    {name:"Warning",color:"black",bgColor:"pink"},
+    {name:"Info",color:"white",bgColor:"red"},
+    {name:"Light",color:"white",bgColor:"green"},
+    {name:"Link",color:"blue",bgColor:"mint"}
+]
+for(let i=0;i<arr.length;i++){
+    let btn=document.createElement("button")
+    btn.innerText=arr[i].name;
+    btn.style.backgroundColor=arr[i].bgColor;
+    btn.style.color=arr[i].color;
+    document.querySelector("body").append(btn);
+}
 
-    for(let i=0;i<names.length;i++){
-        let btn=document.createElement("button")
-        btn.innerText=names[i];
-        btn.style.backgroundColor=Colors[i];
-        document.querySelector("body").append(btn)
-    }
 </script>
