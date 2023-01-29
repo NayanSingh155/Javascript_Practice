@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <h1 id="head"></h1>
+    <button id="b1">INC</button>
+    <button id="b2">DEC</button>
+</body>
+</html>
+<script>
+
+    document.querySelector("#b1").addEventListener("click",incFun);
+    document.querySelector("#b2").addEventListener("click",decFun);
+
+    
+    
+    let count=0;
+    let i=document.getElementById("head").innerText=`Counter:${count}`;
+    function incFun(){
+    //    console.log("inside inc fun");
+    let i=document.getElementById("head");
+    count++;
+    i.innerText=`Counter:${count}`;
+    }
+
+    function decFun(){
+    //    console.log("inside dec fun");
+    let d=document.getElementById("head")
+    count--;
+    d.innerText=`Counter:${count}`;
+    }
+
+</script>
