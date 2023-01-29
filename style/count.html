@@ -1,44 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <h1 id="head"></h1>
     <button id="b1">Inc</button>
     <button id="b2">Dec</button>
 </body>
-
 </html>
+
 <script>
-    document.getElementById("b1").addEventListener("click", incFun);
-    document.getElementById("b2").addEventListener("click", decFun);
+    let h1=document.getElementById("head").innerText=counter;
+    document.getElementById("b1").addEventListener("click",incFun);
+    document.getElementById("b2").addEventListener("click",decFun);
 
-    let Counter = 0;
-    localStorage.getItem("local", Counter) || 0;
-    let h1 = document.getElementById("head").innerText = `Counter:${Counter}`;
-
-
-    function incFun() {
+    function incFun(){
         console.log("inside incFun")
-        Counter++;
-        let h1 = document.getElementById("head").innerText = `Counter:${Counter}`;
-        h1.innerText = Counter;
-        localStorage.setItem("local", Counter);
     }
 
-    function decFun() {
+    function decFun(){
         console.log("inside decFun")
-        Counter--;
-        let h1 = document.getElementById("head").innerText = `Counter:${Counter}`;
-        h1.innerText = Counter;
-        localStorage.setItem("local", Counter);
-
     }
 
 </script>
