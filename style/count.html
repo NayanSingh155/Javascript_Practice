@@ -21,7 +21,7 @@
     let counter = localStorage.getItem("counter") || 0;
     document.getElementById("b1").addEventListener("click", incFun);
     document.getElementById("b2").addEventListener("click", decFun);
-    
+
     let h1 = document.getElementById("head");
     h1.innerText = `Counter:${counter}`;
     function incFun() {
