@@ -26,6 +26,7 @@
     let i=document.getElementById("head");
     count++;
     i.innerText=`Counter:${count}`;
+    localStorage.setItem("inc",count);
     }
 
     function decFun(){
@@ -33,6 +34,7 @@
     let d=document.getElementById("head")
     count--;
     d.innerText=`Counter:${count}`;
+    localStorage.setItem("dec",count)
     }
 
 </script>
