@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Document</title>
 </head>
+
 <body>
     <form>
-        <input type="text" id="name" placeholder="Enter Name Here">
-        <input type="number" id="age" placeholder="Enter Your Age">
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="mail" id="email" placeholder="Enter Email">
+        <input type="number" id="age" placeholder="Enter age">
 
-        <select name="Gender" id="gen">
+        <select id="gen">
+            <option value="Gender">Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
         </select>
@@ -20,19 +24,20 @@
 
     </form>
 </body>
+
 </html>
 <script>
+    document.querySelector("form").addEventListener("submit",formFun);
     let userArr=[];
-    document.querySelector("form").addEventListener("submit",userData);
-    function userData(){
+    function formFun(){
         event.preventDefault();
         let userObj={
-          name:  document.getElementById("name").value,
-          age :  document.getElementById("age").value,
-          gen : document.getElementById("gen").value,
+            name: document.getElementById("name").value,
+            age:document.getElementById("age").value,
+            email: document.getElementById("email").value,
         }
         userArr.push(userObj);
-        console.log(userObj)
-    }
+        console.log(userArr)
 
+    }
 </script>
