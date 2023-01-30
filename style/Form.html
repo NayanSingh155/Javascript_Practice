@@ -21,3 +21,18 @@
     </form>
 </body>
 </html>
+<script>
+    let userArr=[];
+    document.querySelector("form").addEventListener("submit",userData);
+    function userData(){
+        event.preventDefault();
+        let userObj={
+          name:  document.getElementById("name").value,
+          age :  document.getElementById("age").value,
+          gen : document.getElementById("gen").value,
+        }
+        userArr.push(userObj);
+        console.log(userObj)
+    }
+
+</script>
