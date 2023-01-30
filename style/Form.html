@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <form>
-        <input type="text" id="name" placeholder="Enter Name">
-        <input type="mail" id="email" placeholder="Enter Email">
-        <input type="number" id="age" placeholder="Enter age">
 
-        <select id="gen">
-            <option value="Gender">Gender</option>
+        <input type="text" name="" id="name" placeholder="Enter Name here">
+        <input type="number" name="" id="age" placeholder="Enter Age Here">
+        <input type="email" name="" id="email" placeholder="Enter email here">
+
+        <select name="" id="">
+            <option value="" >Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
         </select>
@@ -24,20 +23,22 @@
 
     </form>
 </body>
-
 </html>
 <script>
     document.querySelector("form").addEventListener("submit",formFun);
-    let userArr=[];
+    let userArr = JSON.parse(localStorage.getItem("user")) || [];
+    console.log(userArr)
     function formFun(){
         event.preventDefault();
         let userObj={
-            name: document.getElementById("name").value,
+            name:document.getElementById("name").value,
             age:document.getElementById("age").value,
-            email: document.getElementById("email").value,
+            email:document.getElementById("email").value,
+            // gen:document.getElementById("gen").value,
         }
-        userArr.push(userObj);
+        // console.log(userObj)
+        userArr.push(userObj)
+        localStorage.setItem("user",JSON.stringify(userArr));
         console.log(userArr)
-
     }
 </script>
