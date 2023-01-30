@@ -1,7 +1,7 @@
 document.querySelector("form").addEventListener("submit", dsaFun);
 var queArr = JSON.parse(localStorage.getItem("dsa")) || [];
 
-console.log(queArr)
+// console.log(queArr)
 function dsaFun(event) {
     event.preventDefault();
     // console.log("inside")
@@ -31,7 +31,7 @@ function displayTable(queArr) {
         function dltFun() {
             console.log("delete")
             queArr.splice(i,1)
-            // console.log(queArr)
+            console.log(queArr)
             window.location.reload();
             localStorage.setItem("dsa", JSON.stringify(queArr));
         }
