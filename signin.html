@@ -9,43 +9,44 @@
 </head>
 
 <body>
-    <h1>SignIn</h1>
-    <form action="">
-        <input type="email" id="email" placeholder="Email ">
-        <input type="password" id="password" placeholder="Password">
-        <input type="submit">
+    <form>
+        <input type="email" id="email" placeholder="EMAIL">
+        <input type="password" id="password" placeholder="PASWWORD">
+        <input type="submit" name="" id="">
     </form>
 </body>
 
 </html>
 <script>
     document.querySelector("form").addEventListener("submit", signInFun);
-    let signUp = JSON.parse(localStorage.getItem("signup")) || [];
-
+    let Arr = JSON.parse(localStorage.getItem("signUp")) || [];
     function signInFun() {
         event.preventDefault();
-        let user = {
+        let obj = {
             email: document.getElementById("email").value,
             password: document.getElementById("password").value,
         }
-        if (checkSignInFun(user.email,user.password) === true) {
-            signUp.push(user);
-            localStorage.setItem("user", JSON.stringify(signUp));
-            alert("SignIn Successful!!")
-            window.location.href = "./home.html"
-        } else {
-            alert("Wrong UserName or Password!!")
-        }
 
-        function checkSignInFun(email, password) {
-            let filter = signUp.filter(function (el) {
-                return el.email === email && el.password == password;
+        
+        if(checkEmail(obj.email,obj.password)===true){
+            Arr.push(obj);
+            localStorage.setItem("login",JSON.stringify(Arr));
+            alert("login Success!!")
+
+        }else{
+            alert("Wrong user credentials!!")
+        }
+       
+        function checkEmail(email,password){
+            let filter=Arr.filter(function(el){
+                return email===el.email && password==el.password;
             })
-            if (filter.length > 0) {
+            if(filter.length>0){
                 return true;
-            } else {
+            }else{
                 return false;
             }
         }
     }
+
 </script>

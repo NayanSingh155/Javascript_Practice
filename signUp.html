@@ -5,45 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>signUp</title>
 </head>
 
 <body>
     <form action="">
-        <input type="text" id="name" placeholder="Enter Name">
-        <input type="email" id="email" placeholder="Email here">
-        <input type="password" id="password" placeholder="password here">
+        <input type="email" id="email" placeholder="Enter Email">
+        <input type="password" id="password" placeholder="Password here">
         <input type="submit">
     </form>
 </body>
 
 </html>
 <script>
-    let signUp = JSON.parse(localStorage.getItem("signup")) || [];
-    document.querySelector("form").addEventListener("submit", SignUpFun);
-    function SignUpFun() {
+    document.querySelector("form").addEventListener("submit", signupFun);
+    let Arr = JSON.parse(localStorage.getItem("signUp")) || [];
+    function signupFun() {
         event.preventDefault();
-        let userObj = {
-            name: document.getElementById("name").value,
+        let obj = {
             email: document.getElementById("email").value,
             password: document.getElementById("password").value,
         }
-        // console.log(userObj)
-        if (checkSignUp(userObj.email) === true) {
-            signUp.push(userObj)
-            localStorage.setItem("signup", JSON.stringify(signUp))
-            alert("SignUp Successfully !!")
-            window.location.href="./signin.html"
+        if (checkEmail(obj.email) === true) {
+            Arr.push(obj);
+            localStorage.setItem("signUp", JSON.stringify(Arr));
+            alert("signUp Successfull!!")
+            window.location.href="signin.html"
         } else {
-            alert("User Already exists!!")
+            alert("Account already exists!!")
         }
 
-
-        function checkSignUp(email) {
-            let filter = signUp.filter(function (el) {
-                return email === el.email;
+        function checkEmail(email) {
+            let filter = Arr.filter(function (elem) {
+                return email === elem.email;
             })
-            if (filter.length > 0) {
+            if (filter.length>0) {
                 return false;
             } else {
                 return true;
