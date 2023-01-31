@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cart</title>
+    <style>
+        img {
+            width: 30%;
+            height: 200px;
+        }
+
+        #cart {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="cart"></div>
 </body>
+
 </html>
+<script>
+    let Arr = JSON.parse(localStorage.getItem("addToCart")) || [];
+
+    document.getElementById("cart").append(count())
+    function count() {
+        let c = Arr.length;
+        let cart = document.getElementById("cart")
+        cart.innerText = c;
+    }
+
+
+    function cartData(Arr) {
+        let sum = 0;
+        let cart = document.getElementById('cart');
+        cart.innerHTML = null;
+
+        Arr.forEach(function (el, i) {
+            sum += el.price;
+            // let total_amount=document.getElementById('total_amount');
+            // total_amount.innerText=sum;
+
+            let div = document.createElement('div')
+
+            let img = document.createElement('img')
+            img.src = el.image_url;
+
+            let name = document.createElement('p')
+            name.innerText = el.name;
+
+            let price = document.createElement('p')
+            price.innerText = el.price;
+
+            let btn = document.createElement('button')
+            btn.innerText = 'Remove';
+
+            // btn.setAttribute('id','remove')
+            btn.addEventListener('click', removeFun)
+            function removeFun(i) {
+                Arr.splice(i, 1)
+                localStorage.setItem('cart', JSON.stringify(Arr));
+            //  localStorage.setItem("addToCart",JSON.stringify(Arr));
+
+                // window.location.reload();
+            }
+            removeFun(i);
+
+            div.append(img, name, price, btn)
+            cart.append(div);
+        })
+    }
+    cartData(Arr)
+    // count()
+</script>
