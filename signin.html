@@ -20,7 +20,8 @@
 </html>
 <script>
     document.querySelector("form").addEventListener("submit", signInFun);
-    let signArr = JSON.parse(localStorage.getItem("signArr")) || [];
+    let signUp = JSON.parse(localStorage.getItem("signup")) || [];
+
     function signInFun() {
         event.preventDefault();
         let user = {
@@ -28,8 +29,8 @@
             password: document.getElementById("password").value,
         }
         if (checkSignInFun(user.email,user.password) === true) {
-            signArr.push(user);
-            localStorage.setItem("user", JSON.stringify(signArr));
+            signUp.push(user);
+            localStorage.setItem("user", JSON.stringify(signUp));
             alert("SignIn Successful!!")
             window.location.href = "./home.html"
         } else {
@@ -37,8 +38,8 @@
         }
 
         function checkSignInFun(email, password) {
-            let filter = signArr.filter(function (el) {
-                return el.email === email && el.password === password;
+            let filter = signUp.filter(function (el) {
+                return el.email === email && el.password == password;
             })
             if (filter.length > 0) {
                 return true;
