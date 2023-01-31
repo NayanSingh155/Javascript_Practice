@@ -6,6 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MENS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: serif;
+        }
+        #box{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        img{
+            width: 90%;
+            height: 200px;
+        }
+    </style>
 </head>
 
 <body>
@@ -269,6 +285,7 @@
             strikedoffprice: 1799,
         },
     ];
+    
     displayData(mensData)
     function displayData(mensData) {
         var box = document.getElementById("box");
