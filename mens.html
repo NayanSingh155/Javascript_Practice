@@ -286,6 +286,7 @@
         },
     ];
     
+    let Arr=JSON.parse(localStorage.getItem("addToCart"))||[];
     displayData(mensData)
     function displayData(mensData) {
         var box = document.getElementById("box");
@@ -307,6 +308,19 @@
 
             let btn = document.createElement("button")
             btn.innerText = "Add To Cart";
+            btn.addEventListener("click",addFun);
+            function addFun(){
+               Arr.push(el);
+               localStorage.setItem("addToCart",JSON.stringify(Arr));
+               alert("added To Cart");
+               console.log(Arr)
+            }
+            let dlt=document.createElement("btn")
+            dlt.innerText="Delete";
+            dlt.addEventListener("click",dltFun);
+            function dltFun(){
+
+            }
 
             div.append(img, name, price, offer, btn);
             console.log(div)
