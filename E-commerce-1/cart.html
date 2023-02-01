@@ -51,9 +51,24 @@
                 <li><a class="" href="./signup.html">SIGNUP</a></li>
                 <li><a class="" href="./mens.html">MENS</a</li>
                 <li><a class="" href="./womens.html">WOMENS</a></li>
-                <li><a class="" href="./cart.html">CART</a></li>
+                <li><a class="cart" href="./cart.html">CART</a></li>
             </ul>
         </div>
     </nav>
+    <div class="wlcm">
+        <h3>Welcome <span class="welcome"></span></h3>
+    </div>
 </body>
 </html>
+<script>
+    let cartArr = JSON.parse(localStorage.getItem("cart")) 
+    console.log(cartArr);
+
+    let cart=document.querySelector(".cart").innerText=cartArr.length;
+    document.querySelector(".cart").innerText=`${cart} Items`;
+    
+    let loginArr = JSON.parse(localStorage.getItem("signinUser"));
+
+    //welcome
+    
+</script>

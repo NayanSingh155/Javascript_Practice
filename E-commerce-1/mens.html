@@ -51,12 +51,15 @@
             <ul>
                 <li><a class=".logout" href="./login.html">LogOut</a></li>
                 <li><a class="" href="./signup.html">SIGNUP</a></li>
-                <li><a class="" href="./mens.html">MENS</a< /li>
+                <li><a class="" href="./mens.html">MENS</a</li>
                 <li><a class="" href="./womens.html">WOMENS</a></li>
-                <li><a class="" href="./cart.html">CART</a></li>
+                <li><a class="cart" href="./cart.html">CART</a></li>
+                <li><a class="user" href="#">CART</a></li>
+
             </ul>
         </div>
     </nav>
+    
 
     <div id="box"></div>
 </body>
@@ -104,6 +107,10 @@
 
     let loginArr = JSON.parse(localStorage.getItem("signinUser"));//for checkSignIn
 
+    let wlcm=document.querySelector(".user")
+    wlcm.innerText=loginArr[0].name;
+    wlcm.style.color="red"
+
     let cartArr = JSON.parse(localStorage.getItem("cart")) || [];//forCartAddedItem
 
     displayData(mensData)//calling
@@ -112,7 +119,7 @@
 
     let signupArr = JSON.parse(localStorage.getItem("SignUp"));
 
-// ---------appendLogic-------
+    // ---------appendLogic-------
 
     function displayData(mensData) {
         document.getElementById("box").innerHTML = "";
@@ -129,12 +136,12 @@
             price.innerText = el.price;
 
             let addBtn = document.createElement("button");
-            addBtn.setAttribute("id","add")
+            addBtn.setAttribute("id", "add")
             addBtn.innerText = "Add To Cart";
             addBtn.addEventListener("click", addFun)
             function addFun() {
                 addToCart(el);
-                document.getElementById("add").innerText="Go To Cart";
+                document.getElementById("add").innerText = "Go To Cart";
             }
             div.append(img, name, price, addBtn)
             document.getElementById("box").append(div)
@@ -151,7 +158,7 @@
         cartArr.push(el)
         localStorage.setItem("cart", JSON.stringify(cartArr));
         alert("Added SuccessFully !!")
-        
+
         window.location.reload()
 
     }
@@ -168,9 +175,12 @@
     }
 
     // -----------logOut-------
-    document.getElementsByClassName(".logout").addEventListener("click",logoutFun)
-    function logoutFun(){
-        localStorage.
+    document.getElementsByClassName(".logout").addEventListener("click", logoutFun);
+
+    function logoutFun() {
+        localStorage.removeItem("loginArr");
+        alert("LogOut Succesfull!!");
+        location.replace("login.html");
     }
 
 </script>
