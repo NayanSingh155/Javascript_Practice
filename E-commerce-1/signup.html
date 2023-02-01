@@ -12,7 +12,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: sans-serif;
-            color:black;
+            color: black;
         }
 
         nav {
@@ -42,7 +42,7 @@
             list-style-type: none;
         }
 
-        form{          
+        form {
 
             justify-content: center;
             align-items: center;
@@ -54,12 +54,12 @@
             font-size: medium;
             background-color: bisque;
         }
-        input{
+
+        input {
             width: 50%;
             height: 20px;
-            
+
         }
-        
     </style>
 </head>
 
@@ -83,13 +83,13 @@
         <form action="">
             <h1>SignUp First</h1><br><br>
             <label for="">Enter Name</label><br>
-            <input type="text" id="name" placeholder="Enter Name "><br>
+            <input type="text" id="name" placeholder="Enter Name " required/><br>
 
             <label for="">Email</label><br>
-            <input type="email" id="email" placeholder="Enter Email"><br>
+            <input type="email" id="email" placeholder="Enter Email" required/><br>
 
             <label for="">Password</label><br>
-            <input type="number" id="Password" placeholder="Choose Password"><br>
+            <input type="number" id="password" placeholder="Choose Password" required/><br>
 
             <input type="submit" value="SignUp">
         </form>
@@ -97,3 +97,38 @@
 </body>
 
 </html>
+
+<script >
+    document.querySelector("form").addEventListener("submit", signupFun);
+    let signupArr = JSON.parse(localStorage.getItem("SignUp")) ||  [];
+
+    function signupFun() {
+        event.preventDefault();
+        let obj = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+        }
+
+
+        if (checkEmail(obj.email) === true) {
+            signupArr.push(obj);
+            localStorage.setItem("SignUp", JSON.stringify(signupArr));
+            alert("signUp Successfull !!")
+            window.location.href="./login.html"
+        }else{
+            alert("Account already exists!!")
+        }
+
+        function checkEmail(email){
+          let filter=signupArr.filter(function(elem){
+            return email===elem.email;
+          })
+          if(filter.length>0){
+            return false;
+          }else{
+            return true;
+          }
+        }
+    }
+</script>
