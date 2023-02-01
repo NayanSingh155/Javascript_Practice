@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            color:black;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+            height: 60px;
+            padding: auto;
+            padding-top: 10px;
+            background-color: rgba(12, 12, 12, 0.664);
+            color: white;
+            font-weight: bold;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            text-decoration: none;
+            gap: 50px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        form{          
+
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: auto;
+            width: 50%;
+            padding: 15px;
+            height: 300px;
+            font-size: medium;
+            background-color: bisque;
+        }
+        input{
+            width: 50%;
+            height: 20px;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>E-Commerce-I</div>
+        <div>
+            <ul>
+                <li><a class="" href="./login.html">LOGIN</a></li>
+                <li><a class="" href="./signup.html">SIGNUP</a></li>
+                <li><a class="" href="./mens.html">MENS</a< /li>
+                <li><a class="" href="./womens.html">WOMENS</a></li>
+                <li><a class="" href="./cart.html">CART</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ------------SignUp--------------- -->
+
+    <div>
+        <form action="">
+            <h1>SignUp First</h1><br><br>
+            <label for="">Enter Name</label><br>
+            <input type="text" id="name" placeholder="Enter Name "><br>
+
+            <label for="">Email</label><br>
+            <input type="email" id="email" placeholder="Enter Email"><br>
+
+            <label for="">Password</label><br>
+            <input type="number" id="Password" placeholder="Choose Password"><br>
+
+            <input type="submit" value="SignUp">
+        </form>
+    </div>
+</body>
+
+</html>
