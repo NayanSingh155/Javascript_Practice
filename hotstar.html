@@ -36,7 +36,8 @@
         if(data===undefined){
             return false;
         }
-        
+        appendData(data)
+        console.log("data :",data)
 
     }
     let id;
@@ -48,5 +49,15 @@
         id=setTimeout(function(){
             fun()
         },delay)
+    }
+
+    let movie=document.getElementById("movies")
+    function appendData(data){
+        data.innerHTML=null;
+        data.forEach(function(el){
+            let p=document.createElement("p")
+            p.innerText=el.Title;
+            movie.append(p)
+        })
     }
 </script>
