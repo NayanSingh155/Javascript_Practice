@@ -49,9 +49,9 @@
         <div>E-Commerce-I</div>
         <div>
             <ul>
-                <li><a class=".logout" href="./login.html">LogOut</a></li>
+                <li><a class="logout" href="./login.html">LogOut</a></li>
                 <li><a class="" href="./signup.html">SIGNUP</a></li>
-                <li><a class="" href="./mens.html">MENS</a</li>
+                <li><a class="" href="./mens.html">MENS</a< /li>
                 <li><a class="" href="./womens.html">WOMENS</a></li>
                 <li><a class="cart" href="./cart.html">CART</a></li>
                 <li><a class="user" href="#">CART</a></li>
@@ -59,7 +59,31 @@
             </ul>
         </div>
     </nav>
-    
+
+    <select id="sortByPrice" onchange="sortPrice()">
+        <option value="sortByPrice">sort by Price</option>
+        <option value="HL">High to low</option>
+        <option value="LH">Low to high</option>
+    </select>
+
+    <select id="sortByName" onchange="sortName()">
+        <option value="sortByName">sortByName</option>
+        <option value="A-Z">A-Z</option>
+        <option value="Z-A">Z-A</option>
+    </select>
+
+    <select id="filterCat" onchange="filterCat()">
+        <option value="filter by cat">filterByCat</option>
+        <option value="shoe">Shoes</option>
+        <option value="slipper">Slipper</option>
+        <option value="shirt">Shirt</option>
+        <option value="bag">Bag</option>
+        <option value="t-shirt">T-shirts</option>
+        <option value="hoodie">Hoodies</option>
+        <option value="pant">Pants</option>
+        <option value="short">Shorts</option>
+    </select>
+
 
     <div id="box"></div>
 </body>
@@ -107,9 +131,9 @@
 
     let loginArr = JSON.parse(localStorage.getItem("signinUser"));//for checkSignIn
 
-    let wlcm=document.querySelector(".user")
-    wlcm.innerText=loginArr[0].name;
-    wlcm.style.color="red"
+    let wlcm = document.querySelector(".user")
+    wlcm.innerText = loginArr[0].name;
+    wlcm.style.color = "red"
 
     let cartArr = JSON.parse(localStorage.getItem("cart")) || [];//forCartAddedItem
 
@@ -175,12 +199,78 @@
     }
 
     // -----------logOut-------
-    document.getElementsByClassName(".logout").addEventListener("click", logoutFun);
+    let logout=document.querySelector(".logout");
+    logout.addEventListener("click", logoutFun);
 
     function logoutFun() {
         localStorage.removeItem("loginArr");
-        alert("LogOut Succesfull!!");
+        alert("Logout Succesfull!!");
         location.replace("login.html");
     }
 
+
+
+    //  ------------sortPrice--------
+    function sortPrice() {
+        let select = document.getElementById("sortByPrice").value;
+        if (select === "LH") {
+            mensData.sort(function (a, b) {
+                if (a.price > b.price) {
+                    return 1;
+                }
+                if (a.price < b.price) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            })
+            displayData(mensData);
+        }
+        if (select === "HL") {
+            mensData.sort(function (a, b) {
+                if (a.price > b.price) return -1;
+                if (a.price < b.price) return 1;
+                return 0
+            });
+            displayData(mensData)
+        }
+    }
+
+
+// --------------sortName--------------
+
+function sortName() {
+        let select = document.getElementById("sortByName").value;
+        if (select === "A-Z") {
+            mensData.sort(function (a, b) {
+                if (a.name > b.name) {
+                    return 1;
+                }
+                if (a.name < b.name) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            })
+            displayData(mensData);
+        }
+        if (select === "Z-A") {
+            mensData.sort(function (a, b) {
+                if (a.name > b.name) return -1;
+                if (a.name < b.name) return 1;
+                return 0
+            });
+            displayData(mensData)
+        }
+    }
+
+//    ----------filter------------
+function filterCat(){
+    let filtered=document.getElementById("filterCat").value;
+    let filterProd=mensData.filter(function(el){
+        return el.cat==filtered;
+    });
+    // console.log(filterProd)
+    displayData(filterProd)
+}
 </script>

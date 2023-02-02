@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +14,7 @@
             font-family: sans-serif;
             /* color: white; */
         }
-    
+
         nav {
             display: flex;
             justify-content: space-around;
@@ -25,23 +26,24 @@
             color: white;
             font-weight: bold;
         }
-    
+
         ul {
             display: flex;
             justify-content: space-between;
             text-decoration: none;
             gap: 50px;
         }
-    
+
         a {
             text-decoration: none;
         }
-    
+
         li {
             list-style-type: none;
         }
     </style>
 </head>
+
 <body>
     <nav>
         <div>E-Commerce-I</div>
@@ -49,26 +51,71 @@
             <ul>
                 <li><a class="" href="./login.html">LOGIN</a></li>
                 <li><a class="" href="./signup.html">SIGNUP</a></li>
-                <li><a class="" href="./mens.html">MENS</a</li>
+                <li><a class="" href="./mens.html">MENS</a< /li>
                 <li><a class="" href="./womens.html">WOMENS</a></li>
                 <li><a class="cart" href="./cart.html">CART</a></li>
             </ul>
         </div>
     </nav>
     <div class="wlcm">
-        <h3>Welcome <span class="welcome"></span></h3>
+
     </div>
+    <div id="cartBox"></div>
 </body>
+
 </html>
 <script>
-    let cartArr = JSON.parse(localStorage.getItem("cart")) 
+    let cartArr = JSON.parse(localStorage.getItem("cart"))
     console.log(cartArr);
-
-    let cart=document.querySelector(".cart").innerText=cartArr.length;
-    document.querySelector(".cart").innerText=`${cart} Items`;
-    
     let loginArr = JSON.parse(localStorage.getItem("signinUser"));
 
-    //welcome
-    
+    let wlcm = document.querySelector(".wlcm")
+    wlcm.innerText = `Welcome ${loginArr[0].name}`;
+    wlcm.style.color = "blue"
+
+    let cart = document.querySelector(".cart").innerText = cartArr.length;
+    document.querySelector(".cart").innerText = `${cart} Items`;
+
+    displayCart(cartArr);
+    function displayCart(cartArr) {
+        //    document.getElementById("cartBox")
+        cartArr.forEach(function (el, i) {
+            let div = document.createElement("div")
+            let img = document.createElement("img")
+            img.setAttribute("src", el.image_url)
+            img.setAttribute("class", "image")
+
+            let name = document.createElement("p")
+            name.innerText = el.name;
+            name.setAttribute("class", "name")
+
+            let price = document.createElement("p")
+            price.innerText = "₹" + el.price
+            price.setAttribute("class", "price")
+
+            let btn = document.createElement("button")
+            btn.innerText = "Remove"
+            btn.setAttribute("class", "remove")
+            btn.addEventListener("click", function () {
+
+                removeToCart(i)
+            })
+
+            div.append(img, name, price, btn)
+            document.querySelector("#cartBox").append(div);
+        })
+
+    }
+//  --------------------------------------------------------------------------
+
+
+    // ---------remove--------
+
+    function removeToCart(i) {
+        cartArr.splice(i, 1);
+        localStorage.setItem("cart", JSON.stringify(cartArr))
+        window.location.reload();
+    }
+
+
 </script>
