@@ -17,13 +17,14 @@
 </html>
 <script>
     let box = document.getElementById("box");
-    let url=;
-    let key=;
+    // let url=`https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`;
+    let key = `bc4a51b88e120a6686d069d177c0a08b`;
+    let data;
     async function weatherFun() {
         try {
             let city = document.getElementById("city").value;
-            let res = await fetch(url)
-            let data = await res.json();
+            let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
+            data = await res.json();
             console.log("data :", data);
 
         } catch (err) {
@@ -31,4 +32,5 @@
         }
 
     }
+    weatherFun()
 </script>
