@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FETCH-1</title>
     <style>
-        #box{
+        #box {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
         }
-        img{
+
+        img {
             width: 40%;
             height: 200px;
         }
@@ -22,13 +23,13 @@
 <body>
     <h1>Fetch-1</h1>
 
-    <select  id="sortPrice" onchange="sort()">
+    <select id="sortPrice" onchange="sort()">
         <option value="">sort by price</option>
         <option value="HL">High to Low</option>
         <option value="LH">Low to High</option>
     </select>
 
-    <select  id="filter" onchange="filter()">
+    <select id="filter" onchange="filter()">
         <option value="">Category</option>
         <option value="jewellery">jewellery</option>
         <option value="electronics">electronics</option>
@@ -71,7 +72,7 @@
             // console.log("res:", res);
             data = await res.json();
             console.log("data :", data);
-        appendProduct(data)
+            appendProduct(data)
 
         }
         catch (err) {
@@ -81,56 +82,56 @@
     getData();
 
     //append
-    let box=document.getElementById("box");
-    function appendProduct(data){
-        box.innerHTML="";
-        data.forEach(function(el) {
+    let box = document.getElementById("box");
+    function appendProduct(data) {
+        box.innerHTML = "";
+        data.forEach(function (el) {
 
-            let div=document.createElement("div");
+            let div = document.createElement("div");
 
-            let img=document.createElement("img");
-            img.src=el.image;
+            let img = document.createElement("img");
+            img.src = el.image;
 
-            let title=document.createElement("p")
-            title.innerText=el.title;
+            let title = document.createElement("p")
+            title.innerText = el.title;
 
-            let price=document.createElement("p")
-            price.innerText=el.price;
+            let price = document.createElement("p")
+            price.innerText = el.price;
 
-            div.append(img,title,price);
-            let box=document.getElementById("box");
+            div.append(img, title, price);
+            let box = document.getElementById("box");
             box.append(div);
 
         });
     }
     //sort
-    function sort(){
-        let sort=document.getElementById("sortPrice").value;
+    function sort() {
+        let sort = document.getElementById("sortPrice").value;
         if (sort == "LH") {
-      data.sort(function (a, b) {
-        if (a.price > b.price) return 1;
-        if (a.price < b.price) return -1;
-        return 0
-      });
-      appendProduct(data)
-    }
-    if (sort == "HL") {
-      data.sort(function (a, b) {
-        if (a.price > b.price) return -1;
-        if (a.price < b.price) return 1;
-        return 0
-      });
-      appendProduct(data)
-    }
-       
+            data.sort(function (a, b) {
+                if (a.price > b.price) return 1;
+                if (a.price < b.price) return -1;
+                return 0
+            });
+            appendProduct(data)
+        }
+        if (sort == "HL") {
+            data.sort(function (a, b) {
+                if (a.price > b.price) return -1;
+                if (a.price < b.price) return 1;
+                return 0
+            });
+            appendProduct(data)
+        }
+
     }
 
-//filter
-function filter(){
-let filtered=document.getElementById("filter").value;
-let filteredProd=data.filter(function(el){
-    return el.category==filtered;
-})
-appendProduct(filteredProd)
-}
+    //filter
+    function filter() {
+        let filtered = document.getElementById("filter").value;
+        let filteredProd = data.filter(function (el) {
+            return el.category == filtered;
+        })
+        appendProduct(filteredProd)
+    }
 </script>
